@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Liu+Jian+Mao+Cao&display=swap');
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -50,10 +52,157 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		
 }
+
+html,
+body {
+	height: 100%;
+	font-family: 'Indie Flower', cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Indie Flower', cursive;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+
+/* Your code starts here! */
+
+/* variables */
+@main-font: 'Indie Flower', cursive;
+@nav-font: 'Liu Jian Mao Cao', cursive;
+@nav-color: lightgrey;
+
+/* mixins */
+.mobile-size {
+	background-color: @nav-color;
+	color: blue;
+}
+.mobile-size-h3 {
+	background-color: white;
+	color: red;
+}
+
+body {
+  margin: 0 auto;
+	font-family: @main-font;
+	
+}
+/* .body-container {
+	width: 90%;
+} */
+.body-container {
+	width: 90%;
+	align-self: center;
+	margin: 5%;
+
+	/* navbar start */
+	.nav-bar {
+		background-color: @nav-color;
+		display: flex;
+		justify-content: flex-end;
+		font-family: @nav-font;
+		
+		.links {
+			@media (max-width: 500px) {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+		}
+
+		a {
+			padding: 10px;
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+			font-size: 2rem;
+
+			&:hover {
+				color: white;
+			}
+		
+		}
+	} /* nav-bar styles end */
+
+	.title { /* title start*/
+		margin: 0;
+		padding-top: 20px;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+
+			h1 {
+			font-size: 4rem;
+			text-align: center;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+	} /* title style end*/
+
+	.sections { /* middle section introduction, about, work history*/
+		margin: 0;
+		width: 100%;
+		align-items: center;
+		display: flex;
+
+		h3 {
+			background-color: @nav-color;
+			display: flex;
+			font-size: 2rem;
+			@media (max-width: 500px) {
+			
+				.mobile-size-h3();
+			}
+		}
+		button {
+			padding: 20px;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+		@media (max-width: 500px) {
+			.mobile-size();
+		}
+	} /* sections style ends */
+
+	#contact { /* contact */
+		padding-top: 30px;
+		.phone-email {
+			line-height: 2;
+		}
+
+		@media (max-width: 500px) {
+			.mobile-size()
+		}
+	} /* contact end */
+	
+}
+
+
+
+
+
+
+
+
+
+
 
